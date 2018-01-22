@@ -7,5 +7,5 @@
 **in HSDA:**
 ```qsub -A your_account_name```
 
-3. output the number of lines in a text file (e.g. csv file) 
+3. output the number of lines in a text file (e.g. csv file): 
 ```wc -l < mytextfile```
