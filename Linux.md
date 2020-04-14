@@ -11,5 +11,5 @@
 ```wc -l < mytextfile```
 
 4. in vi environment
-```:w``` : save current file you are vi-ing
+```:w``` : save current file you are vi-ing  
 ```:q``` : exit 
