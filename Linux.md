@@ -10,6 +10,6 @@
 3. output the number of lines in a text file (e.g. csv file): 
 ```wc -l < mytextfile```
 
-4. in vi environment
+4. in vi environment  
 ```:w``` : save current file you are vi-ing  
 ```:q``` : exit 
