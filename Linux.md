@@ -27,8 +27,10 @@ on a windows machine:
 1) go to Windows Menu -> Windows PowerShell -> Windows PowerShell (x86) -> right click -> Run as Administrator  
 2) ```Start-Service sshd```: to start OpenSSH Server to allow remote file transfer    
 3) ```Get-Service sshd```: to check if the OpenSSH Server is running  
-4) on HPC login, use:  ```scp file_to_be_downloaded your_username_on_windows@your_windows_ip:/download_place_on_windows```  
-*if using GBW desktop, a typical command line would be:  ```scp file_to_be_downloaded your_username_on_desktop@desktop_ip:/D:/Data```*  
+4) on HPC login, use:  
+```scp file_to_be_downloaded your_username_on_windows@your_windows_ip:/download_place_on_windows```  
+*if using GBW desktop, a typical command line would be:  
+```scp file_to_be_downloaded your_username_on_desktop@desktop_ip:/D:/Data```*  
 5) check if the file is downloaded  
 6) it is recommended to stop the OpenSSH Server after necessary download for security purposes: in PowerShell: ```Stop-Service sshd```  
 7) ```Get-Service sshd```: to double check if the OpenSSH Server has stopped  
