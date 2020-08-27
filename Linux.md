@@ -31,8 +31,8 @@ on a windows machine:
 ```scp file_to_be_downloaded your_username_on_windows@your_windows_ip:/download_place_on_windows```  
 *if using GBW desktop, a typical command line would be:  
 ```scp file_to_be_downloaded your_username_on_desktop@desktop_ip:/D:/Data```  
-*if using GBW laptop, a typical command line would be: 
-```scp file_to_be_downloaded mo@laptop_ip:/C:/Users/mo/Downloads```
+*if using GBW laptop, a typical command line would be:  
+```scp file_to_be_downloaded mo@laptop_ip:/C:/Users/mo/Downloads```  
 5) check if the file is downloaded  
 6) it is recommended to stop the OpenSSH Server after necessary download for security purposes: in PowerShell: ```Stop-Service sshd```  
 7) ```Get-Service sshd```: to double check if the OpenSSH Server has stopped  
