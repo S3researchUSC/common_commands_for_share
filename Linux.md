@@ -1,22 +1,30 @@
 ### Linux or HPC command lines 
-1. view csv file in format: 
+# Creating/Editing/Viewing files <br>
+1. create a file: ```vi yourfile.py```
+2. view file: ```vi yourfile.py``` or ```vim yourfile.py```
+3. exit out of file view: quit without saving ```:q!``` or save ```:wq```
+4. edit file in vi: ```i``` and press escape to leave edit mode
+5. move to a specific line in file: ```n shift+g```(when not in edit mode)
+6. view first 5 lines of file ```head yourfile.csv```
+7. view csv file in format: 
 ```cat yourfile.csv | sed 's/,/ ,/g' | column -t -s, | less -S```
+8. output the number of lines in a text file (e.g. csv file): 
+```wc -l < mytextfile```
+9. move, rename, and copy files  
+```mv filename destination_directory```: move a file in current directory to another directory  
 
-2. submit an interactive job 
+10. submit an interactive job 
 
 **in HSDA:**
 ```salloc --ntasks=1 --mem-per-cpu=16GB --time=01:00:00```
 
-3. output the number of lines in a text file (e.g. csv file): 
-```wc -l < mytextfile```
+
 
 4. in vi environment  
 ```:w``` : save current file you are vi-ing  
 ```:q``` : exit 
 ```:(number of lines to go to)``` : go to a specific line  
 
-5. move, rename, and copy files  
-```mv filename destination_directory```: move a file in current directory to another directory  
 
 6. run python code 
 
