@@ -12,7 +12,8 @@
 ```wc -l < mytextfile```
 9. move, rename, and copy files  
 ```mv filename destination_directory```: move a file in current directory to another directory  
-
+10. print as it is running in slurm file,
+    in print statement: ```flush=True```
 10. submit an interactive job 
 
 **in HSDA:**
