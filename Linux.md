@@ -1,4 +1,6 @@
 ### Linux or HPC command lines 
+A guide is available through USC's CARC at the link below:
+https://www.carc.usc.edu/user-information/user-guides/software-and-programming
 # Creating/Editing/Viewing files <br>
 1. create a file: ```vi yourfile.py```
 2. view file: ```vi yourfile.py``` or ```vim yourfile.py```
