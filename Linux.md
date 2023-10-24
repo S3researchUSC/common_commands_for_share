@@ -47,3 +47,10 @@ on a windows machine:
 7) ```Get-Service sshd```: to double check if the OpenSSH Server has stopped  
 # Running jobs in parallel with python <br>
 By default, Python only uses one core, but it also supports implicit and explicit parallel programming to enable full use of multi-core processors and compute nodes. This includes the use of shared memory on a single node or distributed memory on multiple nodes. On CARC systems, 1 thread=1 core= 1 logical CPU.
+
+Implicit Parallelism
+Some Python pacakges and their functions use implicit parallelism, so you do not need to call for it in your Python code. These packages will automatically detect the available number of cores. Multiple cores can be requested in the Slurm job with the '''--cpus-per-task''' option.
+
+Explicit Parallelism
+Explicit parallelism refers to explicitly calling for parallel computation in your Python code. Many Python pacakges exist for explicit parallelism. Multiple cores will still need to be requested through the '''--cpus-per-task''' option in the Slurm job.
+
