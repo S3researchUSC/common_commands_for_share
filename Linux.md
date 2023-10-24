@@ -45,3 +45,4 @@ on a windows machine:
 5) check if the file is downloaded  
 6) it is recommended to stop the OpenSSH Server after necessary download for security purposes: in PowerShell: ```Stop-Service sshd```  
 7) ```Get-Service sshd```: to double check if the OpenSSH Server has stopped  
+# Running jobs in parallel <br>
