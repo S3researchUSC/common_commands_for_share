@@ -1,6 +1,7 @@
 ### Linux or HPC command lines 
 A guide is available through USC's CARC at the link below:
 https://www.carc.usc.edu/user-information/user-guides/software-and-programming
+
 # Creating/Editing/Viewing files <br>
 1. create a file: ```vi yourfile.py```
 2. view file: ```vi yourfile.py``` or ```vim yourfile.py```
@@ -56,3 +57,4 @@ Some Python pacakges and their functions use implicit parallelism, so you do not
 Explicit Parallelism
 Explicit parallelism refers to explicitly calling for parallel computation in your Python code. Many Python pacakges exist for explicit parallelism. Multiple cores will still need to be requested through the '''--cpus-per-task''' option in the Slurm job.
 
+Further, one Slurm job can have multiple tasks that are sent to different nodes to all run at the same time.
