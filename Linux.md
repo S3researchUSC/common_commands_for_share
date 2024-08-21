@@ -11,20 +11,28 @@ This link also contains some information on running code in parallel.
 3. vi: view
 # Command Commands in Linux Operating System <br>
 1. move directories: ```cd directoryname``` or ```cd ~``` to move to home directory or ```cd ../``` to move one level up from current directory
-2. list files: 'ls' lists the files in current directory, 
-3. create a file: ```vi yourfile.py```
-4. view file: ```vi yourfile.py``` or ```vim yourfile.py```
-5. exit out of file view: quit without saving ```:q!``` or save ```:wq```
-6. edit file in vi: ```i``` and press escape to leave edit mode
-7. move to a specific line in file: ```n shift+g```(when not in edit mode)
-8. view first 5 lines of file ```head yourfile.csv```
-9. view csv file in format: 
+2. print working directory: ```pwd``` prints the directory currently in
+3. list files: ```ls``` lists the files in current directory, ```ls -l``` lists files with owner, size, date last edited
+4. create a directory: ```mkdir directory name```
+5. create a file: ```vi yourfile.py```
+6. view file: ```vi yourfile.py``` or ```vim yourfile.py```
+7. exit out of file view: quit without saving ```:q!``` or save ```:wq```
+8. edit file in vi: ```i``` and press escape to leave edit mode
+9. remove file: ```rm filename``` or ```rm filename*``` to remove all files that start with "filename", can also put asterick in the middle
+10. remove directory: ```rmdir directoryname``` if directory is empty, ```rmdir -p directoryname``` to force delete a non-empty directory but be careful with this
+11. move to a specific line in file: ```n shift+g```(when not in edit mode)
+12. view first 5 lines of file ```head yourfile.csv```
+13. search for word in files:  ```grep -irl search word``` will return all files in current directory that contain the word you searched for
+14. check storage:  ```df -H``` shows how much of avaialable memory is used
+15. view csv file in format: 
 ```cat yourfile.csv | sed 's/,/ ,/g' | column -t -s, | less -S```
-10. output the number of lines in a text file (e.g. csv file): 
+16. output the number of lines in a text file (e.g. csv file): 
 ```wc -l < mytextfile```
-11. move, rename, and copy files  
-```mv filename destination_directory```: move a file in current directory to another directory  
-12. print as it is running in slurm file,
+17. move, rename, and copy files  
+```mv filename destination_directory```: move a file in current directory to another directory
+```mv filename newfilename```: rename filename to newfilename
+```cp filename destination_directory```: create a copy of a file in current directory to another directory
+18. print as it is running in slurm file,
     in print statement: ```flush=True```
 10. submit an interactive job 
 
