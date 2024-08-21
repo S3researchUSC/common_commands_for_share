@@ -1,21 +1,30 @@
 ### Linux or HPC command lines 
 A guide is available through USC's CARC at the link below:
-https://www.carc.usc.edu/user-information/user-guides/software-and-programming
+https://www.carc.usc.edu/user-guides  
+A guide from CARC specifically for Python (which we tend to use most often). This is really useful to reference for running interactive or batch jobs or installing packages:  
+https://www.carc.usc.edu/user-guides/advanced-hpc-programming/programming-languages/python  
+This link also contains some information on running code in parallel.  
 
-# Creating/Editing/Viewing files <br>
-1. create a file: ```vi yourfile.py```
-2. view file: ```vi yourfile.py``` or ```vim yourfile.py```
-3. exit out of file view: quit without saving ```:q!``` or save ```:wq```
-4. edit file in vi: ```i``` and press escape to leave edit mode
-5. move to a specific line in file: ```n shift+g```(when not in edit mode)
-6. view first 5 lines of file ```head yourfile.csv```
-7. view csv file in format: 
+# Common Commands in Linux
+1. cd <directoryname>: move to directory, cd /: move to root directory, cd ../: move one level up from current directory, cd ~: move to home directory from any location
+2. ls: list of files in current directory
+3. vi: view
+# Command Commands in Linux Operating System <br>
+1. move directories: ```cd directoryname``` or ```cd ~``` to move to home directory or ```cd ../``` to move one level up from current directory
+2. list files: 'ls' lists the files in current directory, 
+3. create a file: ```vi yourfile.py```
+4. view file: ```vi yourfile.py``` or ```vim yourfile.py```
+5. exit out of file view: quit without saving ```:q!``` or save ```:wq```
+6. edit file in vi: ```i``` and press escape to leave edit mode
+7. move to a specific line in file: ```n shift+g```(when not in edit mode)
+8. view first 5 lines of file ```head yourfile.csv```
+9. view csv file in format: 
 ```cat yourfile.csv | sed 's/,/ ,/g' | column -t -s, | less -S```
-8. output the number of lines in a text file (e.g. csv file): 
+10. output the number of lines in a text file (e.g. csv file): 
 ```wc -l < mytextfile```
-9. move, rename, and copy files  
+11. move, rename, and copy files  
 ```mv filename destination_directory```: move a file in current directory to another directory  
-10. print as it is running in slurm file,
+12. print as it is running in slurm file,
     in print statement: ```flush=True```
 10. submit an interactive job 
 
