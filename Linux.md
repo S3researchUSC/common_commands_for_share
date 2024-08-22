@@ -1,4 +1,4 @@
-### Linux or HPC command lines 
+# Linux or HSDA command lines 
 A guide is available through USC's CARC at the link below:
 https://www.carc.usc.edu/user-guides  
 A guide from CARC specifically for Python (which we tend to use most often). This is really useful to reference for running interactive or batch jobs or installing packages:  
@@ -34,17 +34,9 @@ Cheat sheet of commands most frequently used:
 
 Additionally, here is a link to common commands in Linux:  
 https://www.geeksforgeeks.org/basic-linux-commands/  
-Otherwise, if you can't figure out how to do something you can always search linux operating system commands! Tip many of the commands can be adjusted by adding flags at the end. For example ```-c``` combined with ```grep``` to make ```grep -c wordsearch``` will count the number of times the word shows up.  
-
-**in HSDA:**
-```salloc --ntasks=1 --mem-per-cpu=16GB --time=01:00:00```
+Otherwise, if you can't figure out how to do something you can always search linux operating system commands! Tip: many of the commands can be adjusted by adding flags at the end. For example ```-c``` combined with ```grep``` to make ```grep -c wordsearch``` will count the number of times the word shows up.  
 
 
-
-
-6. run python code 
-
-7. install python packages 
 
 # Downloading and transferring files from HSDA
 Need to download the application WinSCP  
