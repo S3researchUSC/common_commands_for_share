@@ -14,7 +14,7 @@ Cheat sheet of commands most frequently used:
 5. create a file: ```vi yourfile.py```
 6. view file: ```vi yourfile.py``` or ```vim yourfile.py```
 7. exit out of file view: quit without saving ```:q!``` or save ```:wq```
-8. edit file in vi: ```i``` and press escape to leave edit mode
+8. edit file in vi: ```i``` to edit, press escape to leave edit mode
 9. remove file: ```rm filename``` or ```rm filename*``` to remove all files that start with "filename", can also put asterick in the middle
 10. remove directory: ```rmdir directoryname``` if directory is empty, ```rmdir -p directoryname``` to force delete a non-empty directory but be careful with this
 11. move to a specific line in file: ```n shift+g```(when not in edit mode) where n is the line number
@@ -36,26 +36,30 @@ Additionally, here is a link to common commands in Linux:
 https://www.geeksforgeeks.org/basic-linux-commands/  
 Otherwise, if you can't figure out how to do something you can always search linux operating system commands! Tip: many of the commands can be adjusted by adding flags at the end. For example ```-c``` combined with ```grep``` to make ```grep -c wordsearch``` will count the number of times the word shows up.  
 
-
+# Transfer files betweeen accounts
+1. Login to HSDA account that contains data/file you want to transfer
+2. scp -r filelocation/filename username@ipadress.usc.edu:~/, enter password, Two-Factor Authentification
+  -  Here the usernname, password, and two-factor will be for the account you are transferring data to
 
 # Downloading and transferring files from HSDA
 Need to download the application WinSCP  
 ## Download from HSDA to local drive:
-1.  In the HSDA: ```scp -r filename or folder username@hpc-transfer1.usc.edu:~/```
+1.  In the HSDA: ```scp -r filename or folder username@hpc-transfer1.usc.edu:~/```, enter password, Two-Factor Authentification
 2.  Open WinSCP on local drive
-3.  Hostname: hpc-transfer1.usc.edu, username: yourusername, password: yourhsdapassword
+3.  Hostname: hpc-transfer1.usc.edu, username: yourusername, password: yourhsdapassword, Two-Factor Authentification
 4.  In local drive (left side), navigate to desired folder
-5.  Select file from hpc to download, right click and select download
+5.  Select file from hpc (rightside) to download, right click and select download
 DO NOT DOWNLOAD OR TRANSFER ANY DATA THAT DOES NOT MEET AGREEMENTS OF NDA. hpc-transfer1.usc.edu is NOT a secure environment, and secure data should not be stored there.
 
 ## Upload from local drive to HSDA
-1. Open WinSCP
+1. Open WinSCP on local drive
 2. In local drive (left side), navigate to desired folder
 3. Right click on desired file/folder and select upload
-4. In the HSDA: ```scp -r peplinsk@hpc-transfer1.usc.edu:~/filename/ destinationfolder```
+4. In the HSDA: ```scp -r username@hpc-transfer1.usc.edu:~/filename/ destinationfolder```, enter password, Two-Factor Authentification
 
-## This was the old way to do it for reference, but haven't used this method in a while
-8. download non-text files from HPC (on-campus ethernet connection required)  
+## This was the old way to do it for reference, but haven't used this method in a while  
+I'm also not sure what the status of GBW desktop is, so you might have to do some work to set this up but WinSCP has worked perfectly for me since we found that solution so you shouldn't need this.  
+Download non-text files from HPC (on-campus ethernet connection required)  
 on a windows machine:  
 1) go to Windows Menu -> Windows PowerShell -> Windows PowerShell (x86) -> right click -> Run as Administrator  
 2) ```Start-Service sshd```: to start OpenSSH Server to allow remote file transfer    
