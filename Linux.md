@@ -3,13 +3,10 @@ A guide is available through USC's CARC at the link below:
 https://www.carc.usc.edu/user-guides  
 A guide from CARC specifically for Python (which we tend to use most often). This is really useful to reference for running interactive or batch jobs or installing packages:  
 https://www.carc.usc.edu/user-guides/advanced-hpc-programming/programming-languages/python  
-This link also contains some information on running code in parallel.  
+This link also contains some information on running code in parallel which could be useful.  
 
-# Common Commands in Linux
-1. cd <directoryname>: move to directory, cd /: move to root directory, cd ../: move one level up from current directory, cd ~: move to home directory from any location
-2. ls: list of files in current directory
-3. vi: view
 # Command Commands in Linux Operating System <br>
+Cheat sheet of commands most frequently used:  
 1. move directories: ```cd directoryname``` or ```cd ~``` to move to home directory or ```cd ../``` to move one level up from current directory
 2. print working directory: ```pwd``` prints the directory currently in
 3. list files: ```ls``` lists the files in current directory, ```ls -l``` lists files with owner, size, date last edited
@@ -20,37 +17,52 @@ This link also contains some information on running code in parallel.
 8. edit file in vi: ```i``` and press escape to leave edit mode
 9. remove file: ```rm filename``` or ```rm filename*``` to remove all files that start with "filename", can also put asterick in the middle
 10. remove directory: ```rmdir directoryname``` if directory is empty, ```rmdir -p directoryname``` to force delete a non-empty directory but be careful with this
-11. move to a specific line in file: ```n shift+g```(when not in edit mode)
+11. move to a specific line in file: ```n shift+g```(when not in edit mode) where n is the line number
 12. view first 5 lines of file ```head yourfile.csv```
 13. search for word in files:  ```grep -irl search word``` will return all files in current directory that contain the word you searched for
 14. check storage:  ```df -H``` shows how much of avaialable memory is used
-15. view csv file in format: 
+15. print number of files in directory: ```ls -1 | wc -l```
+16. view csv file in format: 
 ```cat yourfile.csv | sed 's/,/ ,/g' | column -t -s, | less -S```
-16. output the number of lines in a text file (e.g. csv file): 
+17. output the number of lines in a text file (e.g. csv file): 
 ```wc -l < mytextfile```
-17. move, rename, and copy files  
+18. move, rename, and copy files  
 ```mv filename destination_directory```: move a file in current directory to another directory
 ```mv filename newfilename```: rename filename to newfilename
 ```cp filename destination_directory```: create a copy of a file in current directory to another directory
-18. print as it is running in slurm file,
-    in print statement: ```flush=True```
-10. submit an interactive job 
+
+
+Additionally, here is a link to common commands in Linux:  
+https://www.geeksforgeeks.org/basic-linux-commands/  
+Otherwise, if you can't figure out how to do something you can always search linux operating system commands! Tip many of the commands can be adjusted by adding flags at the end. For example ```-c``` combined with ```grep``` to make ```grep -c wordsearch``` will count the number of times the word shows up.  
 
 **in HSDA:**
 ```salloc --ntasks=1 --mem-per-cpu=16GB --time=01:00:00```
 
 
 
-4. in vi environment  
-```:w``` : save current file you are vi-ing  
-```:q``` : exit 
-```:(number of lines to go to)``` : go to a specific line  
-
 
 6. run python code 
 
 7. install python packages 
 
+# Downloading and transferring files from HSDA
+Need to download the application WinSCP  
+## Download from HSDA to local drive:
+1.  In the HSDA: ```scp -r filename or folder username@hpc-transfer1.usc.edu:~/```
+2.  Open WinSCP on local drive
+3.  Hostname: hpc-transfer1.usc.edu, username: yourusername, password: yourhsdapassword
+4.  In local drive (left side), navigate to desired folder
+5.  Select file from hpc to download, right click and select download
+DO NOT DOWNLOAD OR TRANSFER ANY DATA THAT DOES NOT MEET AGREEMENTS OF NDA. hpc-transfer1.usc.edu is NOT a secure environment, and secure data should not be stored there.
+
+## Upload from local drive to HSDA
+1. Open WinSCP
+2. In local drive (left side), navigate to desired folder
+3. Right click on desired file/folder and select upload
+4. In the HSDA: ```scp -r peplinsk@hpc-transfer1.usc.edu:~/filename/ destinationfolder```
+
+## This was the old way to do it for reference, but haven't used this method in a while
 8. download non-text files from HPC (on-campus ethernet connection required)  
 on a windows machine:  
 1) go to Windows Menu -> Windows PowerShell -> Windows PowerShell (x86) -> right click -> Run as Administrator  
@@ -65,6 +77,7 @@ on a windows machine:
 5) check if the file is downloaded  
 6) it is recommended to stop the OpenSSH Server after necessary download for security purposes: in PowerShell: ```Stop-Service sshd```  
 7) ```Get-Service sshd```: to double check if the OpenSSH Server has stopped  
+
 # Running jobs in parallel with python <br>
 By default, Python only uses one core, but it also supports implicit and explicit parallel programming to enable full use of multi-core processors and compute nodes. This includes the use of shared memory on a single node or distributed memory on multiple nodes. On CARC systems, 1 thread=1 core= 1 logical CPU.
 
